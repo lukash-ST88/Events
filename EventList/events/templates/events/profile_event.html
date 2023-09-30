@@ -1,0 +1,23 @@
+{% extends 'events/profile.html' %}
+
+{% block event %}
+<div class="event"> {{event.title}}</div>
+<div class="description"> {{event.text}}</div>
+<div class="description"> {{event.creation_date}}</div>
+<div class="participant">
+    {% for participant in event.participants.all %}
+    <div class="part">{{participant.username}}</div>
+    {% endfor %}
+</div>
+{% if user in event.participants.all %}
+<form action="{% url 'user_remove' event.pk %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button class='btn' type="submit">Отказаться от уччастия</button>
+</form>
+{% else %}
+<form action="{% url 'user_add' event.pk %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <button class='btn' type="submit">принять участие</button>
+</form>
+{% endif %}
+{% endblock %}

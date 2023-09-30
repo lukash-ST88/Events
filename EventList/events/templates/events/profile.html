@@ -1,0 +1,34 @@
+{% extends 'events/base.html' %}
+
+{% block content %}
+<table>
+    <tr><h2>{{user.username}} <a href="{% url 'logout_user' %}">Выйти</a></h2>
+        <td>
+            <div><h2>Все события</h2>
+                {% for e in events %}
+                {% if user not in e.participants.all %}
+                <a href="{{e.id}}">
+                    <div class="card">{{e.title}}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+                <hr>
+                <h2>Мои события</h2>
+                       {% for e in events %}
+                {% if user in e.participants.all %}
+                <a href="{{e.id}}">
+                     <div class="card">{{event.title}}</div>
+                </a>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </td>
+        <td class="left-border">
+            {% block event %}
+            {% endblock %}
+        </td>
+    </tr>
+</table>
+
+
+{% endblock content %}

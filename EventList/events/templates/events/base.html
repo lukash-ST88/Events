@@ -1,0 +1,29 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Events</title>
+    <link type="text/css" href="{% static 'events/css/style.css' %}?20181217" rel='stylesheet'/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+
+<body>
+<table class="table-page" border=0 cellpadding="0" cellspacing="0">
+    <tr>
+        <td valign=top>
+            {% block content %}
+            {% endblock %}
+        </td>
+    </tr>
+    <tr>
+        <td valign=top>
+            <div id="footer">
+            </div>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

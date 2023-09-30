@@ -1,0 +1,41 @@
+.card {
+    border: 2px solid;
+    color: blue;
+    border-color: black;
+    padding: 5px;
+    margin: 5px;
+}
+.event {
+    font-size: 40px;
+    margin: 20px;
+}
+
+.description {
+    font-style: italic;
+    font-size: 20px;
+    margin: 20px;
+}
+.left-border {
+  border-left: 2px solid blue
+}
+
+.btn {
+    margin: 20px;
+    background: blue;
+    color: white;
+}
+
+.btn:hover {
+    background: white;
+    color: blue;
+}
+
+.participant {
+    display: flex;
+    color: blue;
+    flex-direction: row;
+}
+
+.part {
+    margin: 20px;
+}
