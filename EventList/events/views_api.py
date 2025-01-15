@@ -14,6 +14,7 @@ class EventListCreateView(generics.ListCreateAPIView):
     serializer_class = EventSerializer
     queryset = Event.objects.all()
     permission_classes = (IsAuthenticatedOrReadOnly,)
+    # authentication_classes = (TokenAuthentication, )
 
     def list(self, request):
         try:
